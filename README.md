@@ -1,4 +1,5 @@
 # ProjetoLagarta
+# Henrique Haramaki RA: 10752924 | Lukas Barone Sussa RA: 10753291 | Ryan Matias Dos Santos Alves RA: 10752963
 # Explicação do processo de ideação
 #Nosso processo de ideação aconteceu por meio de uma conversa em grupo onde conversamos sobre nossas ideias e projetos que envolviam pessoas que conhecemos, pai de um amigo nosso que precisava de um site para o seu mercado e um amigo nosso que estava começando na carreira com a moda, querendo criar uma loja de vendas de roupas com seus projetos e estilos. Com isso definimos pontos necessários em cada um dos projetos, analisamos o estilo de criação para cada um e chegamos na conclusão, onde todos os membros concordaram em ajudar nosso amigo que precisa de um site para começar sua carreira.
 #Caráter extensionista
