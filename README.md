@@ -121,9 +121,9 @@ Tutorial Html HomePage
 </main>
 
 </body>
-</html>}
+</html>
 
-Tutorial Css Home page
+Tutorial Css Home page:
 1) Configurações gerais do css do site.
 * {
     margin: 0;
@@ -138,6 +138,7 @@ body {
     line-height: 1.6;
 }
 3) Configurações do navbar do header
+```
 header {
     display: flex;
     justify-content: space-between;
@@ -149,6 +150,7 @@ header {
     z-index: 1000;
     border-bottom: 2px solid #1a1a1a;
 }
+```
 
 .logo {
     display: flex;
