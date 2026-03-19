@@ -125,6 +125,7 @@ Tutorial Html HomePage
 
 Tutorial Css Home page:
 1) Configurações gerais do css do site.
+~~~css
 * {
     margin: 0;
     padding: 0;
@@ -132,6 +133,7 @@ Tutorial Css Home page:
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #1a1a1a;
 }
+~~~
 2) Configurações do body do site
 body {
     background-color: #FFFFFF; /* Branco */
