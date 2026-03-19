@@ -123,8 +123,8 @@ Tutorial Html HomePage
 </body>
 </html>}
 
-Tutorial css:
-/* Configurações Globais */
+Tutorial Css Home page
+1) Configurações gerais do css do site.
 * {
     margin: 0;
     padding: 0;
@@ -132,13 +132,12 @@ Tutorial css:
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #1a1a1a;
 }
-
+2) Configurações do body do site
 body {
     background-color: #FFFFFF; /* Branco */
     line-height: 1.6;
 }
-
-/* Navbar robusta */
+3) Configurações do navbar do header
 header {
     display: flex;
     justify-content: space-between;
@@ -160,8 +159,7 @@ header {
     height: 70px;
     margin-right: 30px;
 }
-
-/* Container da navegação */
+4) Container de navegação
 nav {
     display: flex;
     flex: 1;
@@ -188,16 +186,33 @@ nav ul li a {
 nav ul li a:hover {
     color: #7a7a7a;
 }
+5) Configurações principais em css
+nav ul:not(.icons) {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
 
-/* Ícones */
+nav ul li a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.2s;
+}
+
+nav ul li a:hover {
+    color: #7a7a7a;
+}
+6) Configurações dos ícones
 .icons {
     display: flex;
     list-style: none;
     gap: 20px;
     font-size: 1.4rem;
 }
-
-/* Hero */
+7) Main do site
 .hero {
     position: relative;
     height: 500px;
@@ -223,8 +238,7 @@ nav ul li a:hover {
 .slide.active {
     opacity: 1;
 }
-
-/* Grid de Categorias */
+8) Configurações do grid de categoria
 .categorias {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -268,8 +282,7 @@ nav ul li a:hover {
     text-transform: uppercase;
     font-weight: 800;
 }
-
-/* Seções de Texto */
+9) Secções de texto
 .sobre, .informacoes {
     padding: 80px 10%;
     text-align: left;
