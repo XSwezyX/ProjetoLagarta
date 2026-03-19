@@ -135,12 +135,14 @@ Tutorial Css Home page:
 }
 ~~~
 2) Configurações do body do site
+~~~css
 body {
     background-color: #FFFFFF; /* Branco */
     line-height: 1.6;
 }
+~~~
 3) Configurações do navbar do header
-```
+~~~css
 header {
     display: flex;
     justify-content: space-between;
@@ -163,6 +165,7 @@ header {
     height: 70px;
     margin-right: 30px;
 }
+~~~
 4) Container de navegação
 nav {
     display: flex;
