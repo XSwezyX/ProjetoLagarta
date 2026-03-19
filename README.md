@@ -14,22 +14,30 @@ Tutorial Html HomePage
 <meta charset="UTF-8">
 <title>Mask®️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-2) Integração do Css e JavaScript e fechamento do head.
+
+<!-- Integração de Css e Js -->
 <link rel="stylesheet" href="Mask.css">
 <script src="Mask.js"></script>
 </head>
-3) Implementação do Body, começando pelo header, com nossa interface geral do site ( Logo, NewDrop, Sobre nós, Informações, Pesquisa, Carrinho e Login ).
+
 <body>
+
+<!-- Barra superior do site -->
 <header>
+  <!-- Logo do site -->
   <div class="logo">
-    <img src="logo.png" alt="Mask">
+    <img src="Pack de Roupas Mask/masklogo-removebg-preview.png" alt="Mask">
   </div>
+
+  <!-- Interface da barra superior -->
   <nav>
     <ul>
       <li><a href="#drop">!!NEW DROP!!</a></li>
       <li><a href="#sobre">Sobre nós</a></li>
       <li><a href="#informacoes">Informações</a></li>
     </ul>
+
+    <!-- Simbolos de acesso -->
     <ul class="icons">
       <li><a href="#">🔍</a></li>
       <li><a href="#">👤</a></li>
@@ -37,74 +45,56 @@ Tutorial Html HomePage
     </ul>
   </nav>
 </header>
-4) Carrosel de imagens, mostrando conteudos principais.
+
+<!-- Carrosel background -->
 <section class="hero">
+<img src="slide" src="Pack de Roupas Mask/Modelo blusa 2.jpg">
+<img class="slide active" src="Pack de Roupas Mask/Maski.jpeg">
+<img class="slide" src="Pack de Roupas Mask/Modelo camiseta 2].jpg">
+<img class="slide" src="Pack de Roupas Mask/Modelo camiseta 3.jpeg">
 
-<img class="slide active" src="">
-<img class="slide" src="">
-<img class="slide" src="">
-<img class="slide" src="">
-
-<button class="prev">❮</button>
-<button class="next">❯</button>
 
 </section>
-5) Apresentação de peças de roupas em destaque para venda. Além delas vão haver outras.
+
+<!-- Roupas a venda -->
 <main>
 
-<section class="colecao">
+<section class="categorias">
 
-  <div class="camiseta">
-    <img src="Pack de Roupas Mask/Apricot-front-20260310.png">
-    <h2>Camiseta Apricot</h2>
-    <p>R$152,99</p>
-  </div>
+  <a href="camisetas.html" class="categoria">
+    <img src="Pack de Roupas Mask/Modelo camisetas.jpg" alt="Camisetas">
+    <div class="overlay">
+      <h2>Camisetas</h2>
+    </div>
+  </a>
 
-  <div class="camiseta">
-    <img src="Pack de Roupas Mask/Black-front-20260310.png">
-    <h2>Camiseta Black</h2>
-    <p>R$152,99</p>
-  </div>
+  <a href="shorts.html" class="categoria">
+    <img src="Pack de Roupas Mask/Modelo shorts.jpeg" alt="Shorts">
+    <div class="overlay">
+      <h2>Shorts</h2>
+    </div>
+  </a>
 
-  <div class="camiseta">
-    <img src="Pack de Roupas Mask/Black-front-20260309.png">
-    <h2>Camiseta Preta</h2>
-    <p>R$152,99</p>
-  </div>
+  <a href="calcas.html" class="categoria">
+    <img src="Pack de Roupas Mask/Modelo calça.jpeg" alt="Calças">
+    <div class="overlay">
+      <h2>Calças</h2>
+    </div>
+  </a>
 
-  <div class="camiseta">
-    <img src="Pack de Roupas Mask/Coffee-front-20260309.png">
-    <h2>Camiseta Coffee</h2>
-    <p>R$152,99</p>
-  </div>
+  <a href="moletons.html" class="categoria">
+    <img src="Pack de Roupas Mask/Modelo moletom.jpg" alt="Moletons">
+    <div class="overlay">
+      <h2>Moletons</h2>
+    </div>
+  </a>
 
-  <div class="camiseta">
-    <img src="Pack de Roupas Mask/Colorful Blue-front-20260310.png">
-    <h2>Camiseta Colorful Blue</h2>
-    <p>R$152,99</p>
-  </div>
-
-  <div class="camiseta">
-    <img src="Pack de Roupas Mask/Gray-front-20260309.png">
-    <h2>Camiseta Gray</h2>
-    <p>R$152,99</p>
-  </div>
-
-  <div class="camiseta">
-    <img src="Pack de Roupas Mask/Light Apricot-front-20260309.png">
-    <h2>Camiseta Light Apricot</h2>
-    <p>R$152,99</p>
-  </div>
-
-  <div class="camiseta">
-    <img src="Pack de Roupas Mask/MAKSREDHOODIE.png">
-    <h2>Blusa Vermelha</h2>
-    <p>R$259,99</p>
-  </div>
 </section>
-6) Explicação sobre quem somos.
+
+<!-- Explicação sobre quem somos -->
 <section id="sobre" class="sobre">
   <h2>Sobre a Mask</h2>
+
   <p>
   A Mask nasceu com a ideia de criar roupas que representem atitude,
   identidade e cultura urbana. Inspirada no streetwear moderno,
@@ -112,20 +102,23 @@ Tutorial Html HomePage
   e estilo. Cada coleção é pensada para quem quer se destacar
   e mostrar sua visão através da moda.
   </p>
+
   <div class="fotos-sobre">
-    <img src="foto1.jpg">
-    <img src="foto2.jpg">
+    <img src="Pack de Roupas Mask/foto-sobre-1.jpeg">
   </div>
 </section>
-7) Encerramento da HomePage com informações de contato, localidade e disponibilidade.
-Fim do codigo.
+
+<!-- Informações de contato, endereço e horários -->
 <section id="informacoes" class="informacoes">
   <h2>Informações</h2>
+
   <p><strong>Telefone:</strong> (11) 99999-9999</p>
   <p><strong>Email:</strong> maskcompany@email.com</p>
   <p><strong>Endereço:</strong> São Paulo - SP</p>
   <p><strong>Horário:</strong> Seg - Sex / 9h às 18h</p>
 </section>
+
 </main>
+
 </body>
-</html>
+</html>html>
