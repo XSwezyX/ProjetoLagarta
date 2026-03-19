@@ -167,6 +167,7 @@ header {
 }
 ~~~
 4) Container de navegação
+~~~css
 nav {
     display: flex;
     flex: 1;
@@ -193,7 +194,9 @@ nav ul li a {
 nav ul li a:hover {
     color: #7a7a7a;
 }
+~~~
 5) Configurações principais em css
+~~~css
 nav ul:not(.icons) {
     display: flex;
     list-style: none;
@@ -212,14 +215,18 @@ nav ul li a {
 nav ul li a:hover {
     color: #7a7a7a;
 }
+~~~
 6) Configurações dos ícones
+~~~css
 .icons {
     display: flex;
     list-style: none;
     gap: 20px;
     font-size: 1.4rem;
 }
+~~~
 7) Main do site
+~~~css
 .hero {
     position: relative;
     height: 500px;
@@ -245,7 +252,9 @@ nav ul li a:hover {
 .slide.active {
     opacity: 1;
 }
+~~~
 8) Configurações do grid de categoria
+~~~css
 .categorias {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -289,7 +298,9 @@ nav ul li a:hover {
     text-transform: uppercase;
     font-weight: 800;
 }
+~~~
 9) Secções de texto
+~~~css
 .sobre, .informacoes {
     padding: 80px 10%;
     text-align: left;
@@ -313,5 +324,7 @@ nav ul li a:hover {
 }
     nav ul:not(.icons) {
         gap: 15px;
+}
+~~~
     }
 }
