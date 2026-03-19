@@ -165,19 +165,6 @@ nav ul li a:hover {
     object-position: top; /* mostra só a parte de cima */
     border: 1px solid #1a1a1a;
 }
-
-/* Responsividade */
-@media (max-width: 900px) {
-    header {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .logo img {
-        margin-bottom: 20px;
-        margin-right: 0;
-    }
-
     nav ul:not(.icons) {
         gap: 15px;
     }
