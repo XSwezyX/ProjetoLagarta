@@ -330,45 +330,36 @@ nav ul li a:hover {
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Tutorial JavaScript
-1) Documento DOM
+1) Documento Dom
 ~~~Js
 document.addEventListener('DOMContentLoaded', () => {
-~~~
-2) Seleção de elementos
-~~~Js
     const slides = document.querySelectorAll('.slide');
-    const nextBtn = document.querySelector('.next');
-    const prevBtn = document.querySelector('.prev');
     let currentIndex = 0;
 ~~~
-3) Função principal
+2)  Função principal
 ~~~Js
     function showSlide(index) {
-        // Remove a classe active de todas as imagens
         slides.forEach(slide => slide.classList.remove('active'));
-        
-        // Garante que o índice volte ao início ou ao fim (loop infinito)
+
         if (index >= slides.length) currentIndex = 0;
         else if (index < 0) currentIndex = slides.length - 1;
         else currentIndex = index;
 
-        // Adiciona a classe active na imagem atual
         slides[currentIndex].classList.add('active');
     }
 ~~~
-4) Evento de botões
+3) Alternancia
 ~~~Js
-    nextBtn.addEventListener('click', () => {
+    setInterval(() => {
         showSlide(currentIndex + 1);
-    });
-
-    prevBtn.addEventListener('click', () => {
-        showSlide(currentIndex - 1);
+    }, 3000);
+});
     });
 
     // Opcional: Auto-play (passa sozinho a cada 5 segundos)
     setInterval(() => {
         showSlide(currentIndex + 1);
     }, 5000);
+~~~
 });
 ~~~
