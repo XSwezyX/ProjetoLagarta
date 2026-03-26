@@ -331,12 +331,17 @@ nav ul li a:hover {
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Tutorial JavaScript
 1) Carregamento DOM
+~~~Js
 document.addEventListener('DOMContentLoaded', () => {
+~~~
 2) Seleção de elementos
+~~~Js
 const slides = document.querySelectorAll('.slide');
 const nextBtn = document.querySelector('.next');
 const prevBtn = document.querySelector('.prev');
+~~~
 3) Função principal
+~~~Js
 function showSlide(index) {
     slides.forEach(slide => slide.classList.remove('active'));
 
@@ -346,7 +351,9 @@ function showSlide(index) {
 
     slides[currentIndex].classList.add('active');
 }
+~~~
 4) Evento de botões
+~~~Js
 nextBtn.addEventListener('click', () => {
     showSlide(currentIndex + 1);
 });
@@ -354,7 +361,10 @@ nextBtn.addEventListener('click', () => {
 prevBtn.addEventListener('click', () => {
     showSlide(currentIndex - 1);
 });
+~~~
 5) Auto-play
+~~~Js
 setInterval(() => {
+~~~
     showSlide(currentIndex + 1);
 }, 5000);
