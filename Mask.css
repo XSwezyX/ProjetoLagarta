@@ -5,6 +5,7 @@
     box-sizing: border-box;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #1a1a1a;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 body {
@@ -166,32 +167,6 @@ nav ul li a:hover {
     border: 1px solid #1a1a1a;
 }
 
-.informacoes {
-  display: flex;
-  align-items: center; /* alinha verticalmente */
-  justify-content: space-between;
-  padding: 40px;
-  position: relative;
-}
-
-/* Texto à esquerda */
-.informacoes-texto {
-  max-width: 400px;
-}
-
-/* Imagem no centro absoluto */
-.informacoes img {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200px;
-  transition: 0.5s ease;
-}
-
-/* Efeito ao passar o mouse */
-.informacoes img:hover {
-  drop-shadow: 0 0 0 black;
-}
 /* Responsividade */
 @media (max-width: 900px) {
     header {
@@ -208,3 +183,127 @@ nav ul li a:hover {
         gap: 15px;
     }
 }
+
+.informacoes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    color: #fff;
+    position: relative;
+  }
+  
+  /* Texto à esquerda */
+  .informacoes-texto {
+    max-width: 400px;
+  }
+  
+  .informacoes-texto h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+  }
+  
+  .informacoes-texto p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  /* Animação de flutuação */
+  @keyframes flutuar {
+    0% {
+      transform: translate(-50%, 0px);
+    }
+    50% {
+      transform: translate(-50%, -15px);
+    }
+    100% {
+      transform: translate(-50%, 0px);
+    }
+  }
+  
+  /* Logo centralizada + animada */
+  .informacoes img {
+    max-width: 200px;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: flutuar 3s ease-in-out infinite;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .informacoes {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .informacoes img {
+      position: static;
+      transform: none;
+      margin: 20px 0;
+      animation: flutuar 3s ease-in-out infinite;
+    }
+  }
+  /* Dark Mode geral */
+/* Fundo geral (preto mais suave) */
+body.dark {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  /* Header */
+  body.dark header {
+    background-color: #1a1a1a;
+  }
+  
+  /* TODOS os textos */
+  body.dark h1,
+  body.dark h2,
+  body.dark h3,
+  body.dark h4,
+  body.dark h5,
+  body.dark h6,
+  body.dark p,
+  body.dark span,
+  body.dark li,
+  body.dark strong {
+    color: #ffffff;
+  }
+  
+  /* Links */
+  body.dark a {
+    color: #ffffff;
+  }
+  
+  /* Seções */
+  body.dark .sobre,
+  body.dark .informacoes,
+  body.dark .categorias {
+    background-color: #1a1a1a;
+  }
+  
+  /* Cards categorias */
+  body.dark .categoria {
+    filter: brightness(0.95);
+  }
+  
+  /* Texto secundário (menos importante) */
+  body.dark p {
+    color: #d1d1d1;
+  }
+  
+  /* Botão */
+  #toggle-dark {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: inherit;
+  }
+  body.dark .informacoes img {
+    filter: brightness(0) invert(1);
+  }
+  body.dark header {
+    border-bottom: 1px solid #fff; /* linha branca */
+  }
