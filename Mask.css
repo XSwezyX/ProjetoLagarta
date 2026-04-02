@@ -307,3 +307,6 @@ body.dark {
   body.dark header {
     border-bottom: 1px solid #fff; /* linha branca */
   }
+body.dark .type{
+    color: #ffffff;
+  }
