@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MASK. — Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ===== VARIÁVEIS ===== */
+    :root {
+      --white:  #f5f0e8;
+      --black:  #0a0a0a;
+      --accent: #c8b89a;
+      --glass:  rgba(10, 10, 10, 0.65);
+      --border: rgba(245, 240, 232, 0.15);
+      --error:  #e07070;
+    }
+
+    /* ===== BASE ===== */
+    html, body {
+      height: 100%; width: 100%;
+      font-family: 'Space Mono', monospace;
+      background: var(--black);
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    /* ===== FUNDO ===== */
+    .bg {
+      position: fixed; inset: 0; overflow: hidden;
+    }
+    .bg img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(0.70) saturate(0.9);
+    }
+    .bg-overlay {
+      position: fixed; inset: 0;
+      background: linear-gradient(135deg,
+        rgba(0,0,0,0.4) 0%,
+        rgba(0,0,0,0.1) 50%,
+        rgba(0,0,0,0.5) 100%
+      );
+    }
+
+    /* ===== LAYOUT ===== */
+    .page {
+      position: relative; z-index: 10;
+      display: flex; height: 100vh; width: 100vw;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 8vw;
+      overflow-y: auto;
+    }
+
+    /* ===== CARD ===== */
+    .card {
+      width: 380px;
+      background: var(--glass);
+      backdrop-filter: blur(20px) saturate(1.2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 44px;
+      opacity: 0;
+      transform: translateY(28px);
+      animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+    }
+
+    /* ===== TAGLINE ===== */
+    .tagline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 14px; letter-spacing: 5px;
+      color: var(--accent); opacity: 0.9;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+    }
+
+    /* ===== CAMPOS ===== */
+    .field { margin-bottom: 20px; position: relative; }
+
+    .field label {
+      display: block;
+      font-size: 9px; letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--accent); opacity: 0.8;
+      margin-bottom: 8px;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      background: rgba(245, 240, 232, 0.07);
+      border: 1px solid var(--border);
+      border-bottom-color: rgba(245, 240, 232, 0.3);
+      color: var(--white);
+      font-family: 'Space Mono', monospace;
+      font-size: 13px; padding: 13px 14px;
+      outline: none; border-radius: 1px;
+    }
+
+    .field input::placeholder { color: rgba(245, 240, 232, 0.3); }
+
+    .field input:focus,
+    .field select:focus {
+      border-color: rgba(245, 240, 232, 0.5);
+      background: rgba(245, 240, 232, 0.1);
+    }
+
+    .field select option { background: #1a1a1a; color: var(--white); }
+
+    input[type="date"] { color-scheme: dark; }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(0.8); cursor: pointer;
+    }
+
+    /* Barra de foco */
+    .field input:focus + .bar { transform: scaleX(1); }
+    .bar {
+      position: absolute; bottom: 0; left: 0;
+      width: 100%; height: 1px;
+      background: var(--white);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* ===== BOTÃO ===== */
+    .btn {
+      width: 100%;
+      background: var(--white); color: var(--black);
+      border: none;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 16px; letter-spacing: 5px; padding: 16px;
+      cursor: pointer; border-radius: 1px;
+      margin-top: 4px;
+    }
+    .btn:hover { background: var(--accent); color: var(--black); }
+
+    /* ===== DIVISOR ===== */
+    .divider {
+      display: flex; align-items: center;
+      gap: 14px; margin: 28px 0;
+    }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: var(--border);
+    }
+    .divider span {
+      font-size: 9px; letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.4);
+    }
+
+    /* ===== LINK DE TROCA ===== */
+    .switch-link {
+      text-align: center;
+      font-size: 10px; letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.5);
+    }
+    .switch-link a {
+      color: var(--white); text-decoration: none;
+      border-bottom: 1px solid rgba(245,240,232,0.4);
+      padding-bottom: 1px; cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .switch-link a:hover { border-color: var(--white); }
+
+    /* ===== ERRO NOS CAMPOS ===== */
+    .field input.invalid,
+    .field select.invalid {
+      border-color: var(--error) !important;
+      background: rgba(224, 112, 112, 0.07) !important;
+    }
+    .field-error {
+      font-size: 9px; letter-spacing: 1.5px;
+      color: var(--error);
+      margin-top: 6px;
+      display: none;
+    }
+    .field-error.show { display: block; }
+
+    .form-panel.hidden { display: none; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .form-panel.entering {
+      animation: slideIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg">
+    <img src="Pack de Roupas Mask/Maski.jpeg" alt="Background">
+  </div>
+  <div class="bg-overlay"></div>
+
+  <main class="page">
+
+    <div class="card">
+
+      <!-- ===== PAINEL LOGIN ===== -->
+      <div id="panel-login" class="form-panel">
+        <p class="tagline">Member Access</p>
+
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="seu@email.com" autocomplete="off"/>
+          <div class="bar"></div>
+          <span class="field-error" id="err-email"></span>
+        </div>
+
+        <div class="field">
+          <label for="password">Senha</label>
+          <input type="password" id="password" placeholder="••••••••"/>
+          <div class="bar"></div>
+          <span class="field-error" id="err-password"></span>
+        </div>
+
+        <div style="margin-bottom: 12px;"></div>
+
+        <button class="btn" id="btn-login">Entrar</button>
+
+        <div class="divider"><span>ou</span></div>
+
+        <p class="switch-link">
+          Ainda não tem conta? <a id="toggle-register">Criar conta</a>
+        </p>
+      </div>
+
+      <!-- ===== PAINEL CADASTRO ===== -->
+      <div id="panel-register" class="form-panel hidden">
+        <p class="tagline">Criar conta</p>
+
+        <div class="field">
+          <label for="reg-email">E-mail</label>
+          <input type="email" id="reg-email" placeholder="seu@email.com"/>
+          <div class="bar"></div>
+          <span class="field-error" id="err-reg-email"></span>
+        </div>
+
+        <div class="field">
+          <label for="reg-password">Senha</label>
+          <input type="password" id="reg-password" placeholder="Mín. 1 caractere especial (#@$!...)"/>
+          <div class="bar"></div>
+          <span class="field-error" id="err-reg-password"></span>
+        </div>
+
+        <div class="field">
+          <label for="reg-phone">Telefone</label>
+          <input type="tel" id="reg-phone" placeholder="(11)91234-5678" maxlength="14"/>
+          <div class="bar"></div>
+          <span class="field-error" id="err-reg-phone"></span>
+        </div>
+
+        <div class="field">
+          <label for="reg-birth">Data de nascimento</label>
+          <input type="date" id="reg-birth"/>
+          <div class="bar"></div>
+          <span class="field-error" id="err-reg-birth"></span>
+        </div>
+
+        <div class="field">
+          <label for="reg-gender">Gênero</label>
+          <select id="reg-gender">
+            <option value="">Selecione</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="nao">Prefiro não comentar</option>
+          </select>
+          <span class="field-error" id="err-reg-gender"></span>
+        </div>
+
+        <button class="btn" id="btn-register">Cadastrar</button>
+
+        <div class="divider"><span>ou</span></div>
+
+        <p class="switch-link">
+          Já tem conta? <a id="toggle-login">Entrar</a>
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    /* ===== ERRO POR CAMPO ===== */
+    function setError(id, msg) {
+      const input = document.getElementById(id);
+      const err   = document.getElementById('err-' + id);
+      if (input)  input.classList.add('invalid');
+      if (err)  { err.textContent = msg; err.classList.add('show'); }
+    }
+    function clearError(id) {
+      const input = document.getElementById(id);
+      const err   = document.getElementById('err-' + id);
+      if (input) input.classList.remove('invalid');
+      if (err)   { err.textContent = ''; err.classList.remove('show'); }
+    }
+    function clearAllErrors(...ids) {
+      ids.forEach(clearError);
+    }
+
+    // Limpa erro ao usuário começar a digitar
+    ['email','password','reg-email','reg-password','reg-phone','reg-birth','reg-gender'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', () => clearError(id));
+      if (el) el.addEventListener('change', () => clearError(id));
+    });
+
+    /* ===== TROCA DE PAINEL ===== */
+    function showPanel(show, hide) {
+      const s = document.getElementById(show);
+      const h = document.getElementById(hide);
+      h.classList.add('hidden');
+      s.classList.remove('hidden', 'entering');
+      void s.offsetWidth;
+      s.classList.add('entering');
+    }
+
+    document.getElementById('toggle-register').addEventListener('click', (e) => {
+      e.preventDefault();
+      showPanel('panel-register', 'panel-login');
+    });
+
+    document.getElementById('toggle-login').addEventListener('click', (e) => {
+      e.preventDefault();
+      showPanel('panel-login', 'panel-register');
+    });
+
+    /* ===== VALIDAÇÕES ===== */
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+    }
+    function validatePassword(password) {
+      return /[!@#$%^&*()\-_=+\[\]{};:'",.<>?/\\|`~]/.test(password);
+    }
+    function validatePhone(phone) {
+      return /^\(\d{2}\)\d{4,5}-\d{4}$/.test(phone);
+    }
+
+    /* ===== MÁSCARA TELEFONE ===== */
+    document.getElementById('reg-phone').addEventListener('input', function () {
+      let v = this.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length > 6) {
+        const sep = v.length === 11 ? 7 : 6;
+        v = `(${v.slice(0,2)})${v.slice(2, sep)}-${v.slice(sep)}`;
+      } else if (v.length > 2) {
+        v = `(${v.slice(0,2)})${v.slice(2)}`;
+      } else if (v.length > 0) {
+        v = `(${v}`;
+      }
+      this.value = v;
+    });
+
+    /* ===== LOGIN ===== */
+    document.getElementById('btn-login').addEventListener('click', () => {
+      const email    = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      clearAllErrors('email', 'password');
+      let hasError = false;
+
+      if (!email) {
+        setError('email', 'O e-mail não pode estar vazio.');
+        hasError = true;
+      } else if (!validateEmail(email)) {
+        setError('email', 'E-mail inválido. Use o formato: nome@dominio.com');
+        hasError = true;
+      }
+
+      if (!password) {
+        setError('password', 'A senha não pode estar vazia.');
+        hasError = true;
+      }
+
+      if (hasError) return;
+
+      localStorage.setItem('user', email);
+      window.location.href = 'home.html'; // ← redireciona para home.html
+    });
+
+    /* ===== CADASTRO ===== */
+    document.getElementById('btn-register').addEventListener('click', () => {
+      const email    = document.getElementById('reg-email').value.trim();
+      const password = document.getElementById('reg-password').value.trim();
+      const phone    = document.getElementById('reg-phone').value.trim();
+      const birth    = document.getElementById('reg-birth').value;
+      const gender   = document.getElementById('reg-gender').value;
+
+      clearAllErrors('reg-email', 'reg-password', 'reg-phone', 'reg-birth', 'reg-gender');
+      let hasError = false;
+
+      if (!email) {
+        setError('reg-email', 'O e-mail não pode estar vazio.');
+        hasError = true;
+      } else if (!validateEmail(email)) {
+        setError('reg-email', 'E-mail inválido. Use o formato: nome@dominio.com');
+        hasError = true;
+      }
+
+      if (!password) {
+        setError('reg-password', 'A senha não pode estar vazia.');
+        hasError = true;
+      } else if (!validatePassword(password)) {
+        setError('reg-password', 'A senha precisa ter ao menos um caractere especial: ! @ # $ % ...');
+        hasError = true;
+      }
+
+      if (!phone) {
+        setError('reg-phone', 'O telefone não pode estar vazio.');
+        hasError = true;
+      } else if (!validatePhone(phone)) {
+        setError('reg-phone', 'Formato inválido. Use: (11)91234-5678');
+        hasError = true;
+      }
+
+      if (!birth) {
+        setError('reg-birth', 'Selecione sua data de nascimento.');
+        hasError = true;
+      }
+
+      if (!gender) {
+        setError('reg-gender', 'Selecione uma opção de gênero.');
+        hasError = true;
+      }
+
+      if (hasError) return;
+
+      localStorage.setItem('userData', JSON.stringify({ email, password, phone, birth, gender }));
+      window.location.href = 'home.html'; // ← redireciona para home.html
+    });
+  </script>
+</body>
+</html>
