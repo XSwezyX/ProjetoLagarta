@@ -6,10 +6,10 @@
   <title>MASK. — Login</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
-    /* ===== RESET ===== */
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* ===== VARIÁVEIS ===== */
+    /*  VARIÁVEIS  */
     :root {
       --white:  #f5f0e8;
       --black:  #0a0a0a;
@@ -19,7 +19,7 @@
       --error:  #e07070;
     }
 
-    /* ===== BASE ===== */
+    /*  BASE  */
     html, body {
       height: 100%; width: 100%;
       font-family: 'Space Mono', monospace;
@@ -28,7 +28,7 @@
       overflow: hidden;
     }
 
-    /* ===== FUNDO ===== */
+    /*  FUNDO  */
     .bg {
       position: fixed; inset: 0; overflow: hidden;
     }
@@ -46,7 +46,7 @@
       );
     }
 
-    /* ===== LAYOUT ===== */
+    /*  LAYOUT  */
     .page {
       position: relative; z-index: 10;
       display: flex; height: 100vh; width: 100vw;
@@ -56,7 +56,7 @@
       overflow-y: auto;
     }
 
-    /* ===== CARD ===== */
+    /*  CARD  */
     .card {
       width: 380px;
       background: var(--glass);
@@ -69,7 +69,7 @@
       animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
     }
 
-    /* ===== TAGLINE ===== */
+    /*  TAGLINE  */
     .tagline {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 14px; letter-spacing: 5px;
@@ -78,7 +78,7 @@
       text-transform: uppercase;
     }
 
-    /* ===== CAMPOS ===== */
+    /*  CAMPOS  */
     .field { margin-bottom: 20px; position: relative; }
 
     .field label {
@@ -126,7 +126,7 @@
       transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    /* ===== BOTÃO ===== */
+    /*  BOTÃO  */
     .btn {
       width: 100%;
       background: var(--white); color: var(--black);
@@ -138,7 +138,7 @@
     }
     .btn:hover { background: var(--accent); color: var(--black); }
 
-    /* ===== DIVISOR ===== */
+    /*  DIVISOR  */
     .divider {
       display: flex; align-items: center;
       gap: 14px; margin: 28px 0;
@@ -153,7 +153,7 @@
       color: rgba(245,240,232,0.4);
     }
 
-    /* ===== LINK DE TROCA ===== */
+    /*  LINK DE TROCA  */
     .switch-link {
       text-align: center;
       font-size: 10px; letter-spacing: 2px;
@@ -168,7 +168,7 @@
     }
     .switch-link a:hover { border-color: var(--white); }
 
-    /* ===== ERRO NOS CAMPOS ===== */
+    /*  ERRO NOS CAMPOS  */
     .field input.invalid,
     .field select.invalid {
       border-color: var(--error) !important;
@@ -207,7 +207,7 @@
 
     <div class="card">
 
-      <!-- ===== PAINEL LOGIN ===== -->
+      <!--  PAINEL LOGIN  -->
       <div id="panel-login" class="form-panel">
         <p class="tagline">Member Access</p>
 
@@ -236,7 +236,7 @@
         </p>
       </div>
 
-      <!-- ===== PAINEL CADASTRO ===== -->
+      <!--  PAINEL CADASTRO  -->
       <div id="panel-register" class="form-panel hidden">
         <p class="tagline">Criar conta</p>
 
@@ -292,7 +292,7 @@
   </main>
 
   <script>
-    /* ===== ERRO POR CAMPO ===== */
+    /*  ERRO POR CAMPO  */
     function setError(id, msg) {
       const input = document.getElementById(id);
       const err   = document.getElementById('err-' + id);
@@ -316,7 +316,7 @@
       if (el) el.addEventListener('change', () => clearError(id));
     });
 
-    /* ===== TROCA DE PAINEL ===== */
+    /*  TROCA DE PAINEL  */
     function showPanel(show, hide) {
       const s = document.getElementById(show);
       const h = document.getElementById(hide);
@@ -336,7 +336,7 @@
       showPanel('panel-login', 'panel-register');
     });
 
-    /* ===== VALIDAÇÕES ===== */
+    /*  VALIDAÇÕES  */
     function validateEmail(email) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
     }
@@ -347,7 +347,7 @@
       return /^\(\d{2}\)\d{4,5}-\d{4}$/.test(phone);
     }
 
-    /* ===== MÁSCARA TELEFONE ===== */
+    /*  MÁSCARA TELEFONE  */
     document.getElementById('reg-phone').addEventListener('input', function () {
       let v = this.value.replace(/\D/g, '').slice(0, 11);
       if (v.length > 6) {
@@ -361,7 +361,7 @@
       this.value = v;
     });
 
-    /* ===== LOGIN ===== */
+    /*  LOGIN  */
     document.getElementById('btn-login').addEventListener('click', () => {
       const email    = document.getElementById('email').value.trim();
       const password = document.getElementById('password').value.trim();
@@ -388,7 +388,7 @@
       window.location.href = 'home.html'; // ← redireciona para home.html
     });
 
-    /* ===== CADASTRO ===== */
+    /*  CADASTRO  */
     document.getElementById('btn-register').addEventListener('click', () => {
       const email    = document.getElementById('reg-email').value.trim();
       const password = document.getElementById('reg-password').value.trim();
