@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Camisetas — Mask®</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="catalogo.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <a href="home.html"><img src="Pack de Roupas Mask/MASK BLACK.png" alt="Mask"></a>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="home.html#hero">!!NEW DROP!!</a></li>
+      <li><a href="home.html#categorias">Catálogo</a></li>
+      <li><a href="home.html#sobre">Sobre nós</a></li>
+    </ul>
+    <ul class="icons">
+      <li><button id="toggle-dark">🌙</button></li>
+      <li><a href="#">👤</a></li>
+      <li>
+        <div class="cart-wrapper cart-trigger">
+          🛒
+          <span class="cart-count" style="display:none">0</span>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- NAVEGAÇÃO ENTRE CATEGORIAS -->
+<nav class="cat-nav">
+  <a href="camisetas.html" class="cat-nav-link active">Camisetas</a>
+  <a href="shorts.html" class="cat-nav-link">Shorts</a>
+  <a href="calcas.html" class="cat-nav-link">Calças</a>
+  <a href="moletons.html" class="cat-nav-link">Moletons</a>
+</nav>
+
+<!-- BANNER -->
+<section class="category-banner">
+  <div class="banner-text">
+    <p>Coleção 2026</p>
+    <h1>Camisetas</h1>
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+<main>
+<section class="produtos-section">
+  <div class="produtos-header">
+    <h2>Todas as Camisetas</h2>
+    <span class="produtos-count">6 produtos</span>
+  </div>
+
+  <div class="produtos-grid">
+
+    <!-- PRODUTO 1 -->
+    <article class="produto-card" onclick="openModal(produtos[0])">
+      <div class="produto-card-img">
+        <span class="produto-badge">New Drop</span>
+        <img class="img-front" src="Pack de Roupas Mask/Black-front-20260309.png" alt="Mask Off Preta">
+        <img class="img-back"  src="Pack de Roupas Mask/Black-back-20260309.png"  alt="Mask Off Preta Costas">
+      </div>
+      <div class="produto-card-info">
+        <h3>Mask Off Preta</h3>
+        <p class="desc">Camiseta essencial de algodão premium com estampa exclusiva Mask.</p>
+        <div class="produto-card-bottom">
+          <span class="produto-preco">R$ 149,90</span>
+          <div class="tamanhos-mini">
+            <span class="tamanho-tag">P</span>
+            <span class="tamanho-tag">M</span>
+            <span class="tamanho-tag">G</span>
+            <span class="tamanho-tag">GG</span>
+          </div>
+        </div>
+        <button class="btn-add-card" onclick="event.stopPropagation(); addToCart('Mask Off Preta', 149.90, 'Pack de Roupas Mask/Black-front-20260309.png', this.closest('.produto-card').querySelector('.tamanho-tag.selected')?.textContent || '', 'Preto')">
+          Adicionar ao Carrinho
+        </button>
+      </div>
+    </article>
+
+    <!-- PRODUTO 2 -->
+    <article class="produto-card" onclick="openModal(produtos[1])">
+      <div class="produto-card-img">
+        <span class="produto-badge">Destaque</span>
+        <img class="img-front" src="Pack de roupas MASK pt2/White-front-20260407.png" alt="Mask Off White">
+        <img class="img-back"  src="Pack de roupas MASK pt2/White-front-Mockup-20260407.png" alt="Mask Off White Alt">
+      </div>
+      <div class="produto-card-info">
+        <h3>Mask Off White</h3>
+        <p class="desc">Camiseta off-white minimalista com logo bordada no peito.</p>
+        <div class="produto-card-bottom">
+          <span class="produto-preco">R$ 159,90</span>
+          <div class="tamanhos-mini">
+            <span class="tamanho-tag">P</span>
+            <span class="tamanho-tag">M</span>
+            <span class="tamanho-tag">G</span>
+            <span class="tamanho-tag">GG</span>
+          </div>
+        </div>
+        <button class="btn-add-card" onclick="event.stopPropagation(); addToCart('Mask Off White', 159.90, 'Pack de Roupas Mask/MASKOFRONTBACK-OFF-WHITE.png', this.closest('.produto-card').querySelector('.tamanho-tag.selected')?.textContent || '', 'Off White')">
+          Adicionar ao Carrinho
+        </button>
+      </div>
+    </article>
+
+    <!-- PRODUTO 3 -->
+    <article class="produto-card" onclick="openModal(produtos[2])">
+      <div class="produto-card-img">
+        <img class="img-front" src="Pack de Roupas Mask/Coffee-front-20260309.png" alt="Mask Coffee">
+        <img class="img-back"  src="Pack de Roupas Mask/Coffee-back-20260309.png"  alt="Mask Coffee Costas">
+      </div>
+      <div class="produto-card-info">
+        <h3>Mask Coffee</h3>
+        <p class="desc">Tom café aconchegante com estampa gráfica na frente e costas.</p>
+        <div class="produto-card-bottom">
+          <span class="produto-preco">R$ 149,90</span>
+          <div class="tamanhos-mini">
+            <span class="tamanho-tag">P</span>
+            <span class="tamanho-tag">M</span>
+            <span class="tamanho-tag">G</span>
+            <span class="tamanho-tag">GG</span>
+          </div>
+        </div>
+        <button class="btn-add-card" onclick="event.stopPropagation(); addToCart('Mask Coffee', 149.90, 'Pack de Roupas Mask/Coffee-front-20260309.png', this.closest('.produto-card').querySelector('.tamanho-tag.selected')?.textContent || '', 'Coffee')">
+          Adicionar ao Carrinho
+        </button>
+      </div>
+    </article>
+
+    <!-- PRODUTO 4 -->
+    <article class="produto-card" onclick="openModal(produtos[3])">
+      <div class="produto-card-img">
+        <span class="produto-badge">New Drop</span>
+        <img class="img-front" src="Pack de Roupas Mask/Black-front-20260310.png" alt="Mask Black Vol.2">
+        <img class="img-back"  src="Pack de Roupas Mask/Black-back-20260310.png"  alt="Mask Black Vol.2 Costas">
+      </div>
+      <div class="produto-card-info">
+        <h3>Mask Black Vol.2</h3>
+        <p class="desc">Segunda edição da preta favorita, com nova arte exclusiva.</p>
+        <div class="produto-card-bottom">
+          <span class="produto-preco">R$ 169,90</span>
+          <div class="tamanhos-mini">
+            <span class="tamanho-tag">P</span>
+            <span class="tamanho-tag">M</span>
+            <span class="tamanho-tag">G</span>
+            <span class="tamanho-tag">GG</span>
+          </div>
+        </div>
+        <button class="btn-add-card" onclick="event.stopPropagation(); addToCart('Mask Black Vol.2', 169.90, 'Pack de Roupas Mask/Black-front-20260310.png', this.closest('.produto-card').querySelector('.tamanho-tag.selected')?.textContent || '', 'Preto')">
+          Adicionar ao Carrinho
+        </button>
+      </div>
+    </article>
+
+    <!-- PRODUTO 5 -->
+    <article class="produto-card" onclick="openModal(produtos[4])">
+      <div class="produto-card-img">
+        <img class="img-front" src="Pack de Roupas Mask/Gray-front-20260309.png" alt="Mask Gray">
+        <img class="img-back"  src="Pack de Roupas Mask/Gray-back-20260309.png"  alt="Mask Gray Costas">
+      </div>
+      <div class="produto-card-info">
+        <h3>Mask Gray</h3>
+        <p class="desc">Cinza versátil para compor qualquer look urbano do dia a dia.</p>
+        <div class="produto-card-bottom">
+          <span class="produto-preco">R$ 149,90</span>
+          <div class="tamanhos-mini">
+            <span class="tamanho-tag">P</span>
+            <span class="tamanho-tag">M</span>
+            <span class="tamanho-tag">G</span>
+            <span class="tamanho-tag">GG</span>
+          </div>
+        </div>
+        <button class="btn-add-card" onclick="event.stopPropagation(); addToCart('Mask Gray', 149.90, 'Pack de Roupas Mask/Gray-front-20260309.png', this.closest('.produto-card').querySelector('.tamanho-tag.selected')?.textContent || '', 'Cinza')">
+          Adicionar ao Carrinho
+        </button>
+      </div>
+    </article>
+
+    <!-- PRODUTO 6 -->
+    <article class="produto-card" onclick="openModal(produtos[5])">
+      <div class="produto-card-img">
+        <span class="produto-badge">Limited</span>
+        <img class="img-front" src="Pack de Roupas Mask/Colorful Blue-front-20260310.png" alt="Mask Blue">
+        <img class="img-back"  src="Pack de Roupas Mask/Colorful Blue-back-20260310.png"  alt="Mask Blue Costas">
+      </div>
+      <div class="produto-card-info">
+        <h3>Mask Colorful Blue</h3>
+        <p class="desc">Edição limitada em azul vibrante com estampa colorida exclusiva.</p>
+        <div class="produto-card-bottom">
+          <span class="produto-preco">R$ 179,90</span>
+          <div class="tamanhos-mini">
+            <span class="tamanho-tag">P</span>
+            <span class="tamanho-tag">M</span>
+            <span class="tamanho-tag">G</span>
+            <span class="tamanho-tag">GG</span>
+          </div>
+        </div>
+        <button class="btn-add-card" onclick="event.stopPropagation(); addToCart('Mask Colorful Blue', 179.90, 'Pack de Roupas Mask/Colorful Blue-front-20260310.png', this.closest('.produto-card').querySelector('.tamanho-tag.selected')?.textContent || '', 'Azul')">
+          Adicionar ao Carrinho
+        </button>
+      </div>
+    </article>
+
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <img src="Pack de Roupas Mask/masklogo-removebg-preview.png" alt="Mask Logo">
+    <p>Streetwear com atitude e identidade.</p>
+  </div>
+  <div>
+    <h4>Navegação</h4>
+    <a href="home.html">Home</a>
+    <a href="camisetas.html">Camisetas</a>
+    <a href="shorts.html">Shorts</a>
+    <a href="calcas.html">Calças</a>
+    <a href="moletons.html">Moletons</a>
+  </div>
+  <div>
+    <h4>Contato</h4>
+    <p>(11) 99999-9999</p>
+    <p>maskcompany@email.com</p>
+    <p>São Paulo — SP</p>
+    <p>Seg–Sex / 9h às 18h</p>
+  </div>
+</footer>
+<div class="footer-bottom">© 2026 Mask®. Todos os direitos reservados.</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-body">
+      <div class="modal-gallery">
+        <img class="modal-main-img" src="" alt="Produto">
+        <div class="modal-thumbs"></div>
+      </div>
+      <div class="modal-info">
+        <span class="modal-cat"></span>
+        <h2 class="modal-nome"></h2>
+        <div class="modal-preco"></div>
+        <p class="modal-desc"></p>
+        <div>
+          <p class="modal-section-label">Tamanhos</p>
+          <div class="modal-tamanhos"></div>
+        </div>
+        <div>
+          <p class="modal-section-label">Cores disponíveis</p>
+          <div class="modal-cores"></div>
+        </div>
+        <div class="modal-material"></div>
+        <button class="btn-add-modal">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CART -->
+<div class="cart-overlay" id="cart-bg"></div>
+<aside class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <h3>Meu Carrinho</h3>
+    <button class="cart-close" id="cart-close">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total</span>
+      <strong id="cart-total-value">R$ 0,00</strong>
+    </div>
+    <button class="btn-checkout" onclick="showToast('Em breve: checkout online!')">Finalizar Compra</button>
+  </div>
+</aside>
+
+<script>
+const produtos = [
+  {
+    nome: 'Mask Off Preta',
+    categoria: 'Camisetas',
+    preco: 149.90,
+    imgs: [
+      'Pack de Roupas Mask/Black-front-20260309.png',
+      'Pack de Roupas Mask/Black-back-20260309.png'
+    ],
+    descFull: 'A Mask Off Preta é a peça definitiva do streetwear nacional. Confeccionada em algodão 100% premium, com estampa exclusiva serigrafada frente e verso. Corte oversized para aqueles que querem estilo sem abrir mão do conforto.',
+    material: '100% Algodão Fio 30.1 Penteado — 220g/m²',
+    tamanhos: ['P', 'M', 'G', 'GG'],
+    cores: [
+      { nome: 'Preto', hex: '#1a1a1a' },
+      { nome: 'Cinza Chumbo', hex: '#555' }
+    ]
+  },
+  {
+    nome: 'Mask Off White',
+    categoria: 'Camisetas',
+    preco: 159.90,
+    imgs: [
+      'Pack de Roupas Mask/Light Apricot-front-20260309.png',
+      'Pack de Roupas Mask/Light Apricot-back-20260310.png'
+    ],
+    descFull: 'O clássico off-white da Mask — limpo, sofisticado e cheio de personalidade. Logo bordada no peito e estampa sutil nas costas. A escolha certa para quem quer elegância no streetwear.',
+    material: '100% Algodão Pima — 200g/m²',
+    tamanhos: ['P', 'M', 'G', 'GG'],
+    cores: [
+      { nome: 'Off White', hex: '#f5f0e8' },
+      { nome: 'Apricot', hex: '#e8c4a0' }
+    ]
+  },
+  {
+    nome: 'Mask Coffee',
+    categoria: 'Camisetas',
+    preco: 149.90,
+    imgs: [
+      'Pack de Roupas Mask/Coffee-front-20260309.png',
+      'Pack de Roupas Mask/Coffee-back-20260309.png'
+    ],
+    descFull: 'A Mask Coffee traz um tom terra que combina com tudo. Estampa gráfica impressa frente e verso, tecido de alta qualidade que mantém o caimento mesmo após várias lavagens.',
+    material: '100% Algodão Fio 30.1 Penteado — 220g/m²',
+    tamanhos: ['P', 'M', 'G', 'GG'],
+    cores: [
+      { nome: 'Coffee', hex: '#6f4e37' },
+      { nome: 'Caramelo', hex: '#c68642' }
+    ]
+  },
+  {
+    nome: 'Mask Black Vol.2',
+    categoria: 'Camisetas',
+    preco: 169.90,
+    imgs: [
+      'Pack de Roupas Mask/Black-front-20260310.png',
+      'Pack de Roupas Mask/Black-back-20260310.png'
+    ],
+    descFull: 'O segundo volume da nossa camiseta preta mais desejada. Arte repaginada com novos elementos gráficos, mantendo o DNA Mask que todo mundo reconhece. Edição numerada.',
+    material: '100% Algodão Fio 30.1 Penteado — 230g/m² — Corte Oversized',
+    tamanhos: ['P', 'M', 'G', 'GG'],
+    cores: [
+      { nome: 'Preto', hex: '#1a1a1a' }
+    ]
+  },
+  {
+    nome: 'Mask Gray',
+    categoria: 'Camisetas',
+    preco: 149.90,
+    imgs: [
+      'Pack de Roupas Mask/Gray-front-20260309.png',
+      'Pack de Roupas Mask/Gray-back-20260309.png'
+    ],
+    descFull: 'Cinza é o novo preto. A Mask Gray é a peça mais versátil da coleção — vai bem com qualquer look, de dia ou de noite. Tecido macio e durável, estampa que não desbota.',
+    material: '100% Algodão Mescla — 220g/m²',
+    tamanhos: ['P', 'M', 'G', 'GG'],
+    cores: [
+      { nome: 'Cinza', hex: '#888' },
+      { nome: 'Cinza Escuro', hex: '#555' }
+    ]
+  },
+  {
+    nome: 'Mask Colorful Blue',
+    categoria: 'Camisetas',
+    preco: 179.90,
+    imgs: [
+      'Pack de Roupas Mask/Colorful Blue-front-20260310.png',
+      'Pack de Roupas Mask/Colorful Blue-back-20260310.png'
+    ],
+    descFull: 'Edição limitada para quem não tem medo de cor. O azul vibrante contrasta com a estampa colorida exclusiva — uma peça que vai fazer você ser notado onde quer que vá.',
+    material: '100% Algodão Penteado — 220g/m² — Tingimento Especial',
+    tamanhos: ['P', 'M', 'G', 'GG'],
+    cores: [
+      { nome: 'Azul Vibrante', hex: '#1a6fd4' },
+      { nome: 'Azul Marinho', hex: '#0a2d6e' }
+    ]
+  }
+];
+</script>
+
+<script src="catalogo.js"></script>
+</body>
+</html>
