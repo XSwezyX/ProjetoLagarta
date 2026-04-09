@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Calças — Mask®</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="catalogo.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="home.html"><img src="Pack de Roupas Mask/MASK BLACK.png" alt="Mask"></a>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="home.html#hero">!!NEW DROP!!</a></li>
+      <li><a href="home.html#categorias">Catálogo</a></li>
+      <li><a href="home.html#sobre">Sobre nós</a></li>
+    </ul>
+    <ul class="icons">
+      <li><button id="toggle-dark">🌙</button></li>
+      <li><a href="#">👤</a></li>
+      <li>
+        <div class="cart-wrapper cart-trigger">
+          🛒
+          <span class="cart-count" style="display:none">0</span>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- NAVEGAÇÃO ENTRE CATEGORIAS -->
+<nav class="cat-nav">
+  <a href="camisetas.html" class="cat-nav-link">Camisetas</a>
+  <a href="shorts.html" class="cat-nav-link">Shorts</a>
+  <a href="calcas.html" class="cat-nav-link active">Calças</a>
+  <a href="moletons.html" class="cat-nav-link">Moletons</a>
+</nav>
+
+
+<section class="category-banner">
+  <div class="banner-text">
+    <p>Coleção 2026</p>
+    <h1>Calças</h1>
+  </div>
+</section>
+
+<main>
+<section class="produtos-section">
+  <div class="produtos-header">
+    <h2>Todas as Calças</h2>
+    <span class="produtos-count">4 produtos</span>
+  </div>
+
+  <div class="produtos-grid">
+
+    <!-- P1 -->
+    <article class="produto-card" onclick="openModal(produtos[0])">
+      <div class="produto-card-img">
+        <span class="produto-badge">New Drop</span>
+        <img class="img-front" src="Pack de roupas MASK pt2/CLOUD CALCA MASK.png" alt="Cloud Calça">
+      </div>
+      <div class="produto-card-info">
+        <h3>Cloud Calça Mask</h3>
+        <p class="desc">Calça wide leg ultra-macia com estampa cloud exclusiva — leve como uma nuvem.</p>
+        <div class="produto-card-bottom">
+          <span class="produto-preco">R$ 229,90</span>
+          <div class="tamanhos-mini">
+            <span class="tamanho-tag">P</span>
+            <span class="tamanho-tag">M</span>
+            <span class="tamanho-tag">G</span>
+            <span class="tamanho-tag">GG</span>
+          </div>
+        </div>
+        <button class="btn-add-card" onclick="event.stopPropagation(); addToCart('Cloud Calça Mask', 229.90, 'Pack de roupas MASK pt2/CLOUD CALCA MASK.png', this.closest('.produto-card').querySelector('.tamanho-tag.selected')?.textContent || '', 'Preto')">
+          Adicionar ao Carrinho
+        </button>
+      </div>
+    </article>
+
+    <!-- P2 -->
+    <article class="produto-card" onclick="openModal(produtos[1])">
+      <div class="produto-card-img">
+        <span class="produto-badge">Destaque</span>
+        <img class="img-front" src="Pack de Roupas Mask/Calça jens preta.jpg" alt="Calça Jeans">
+      </div>
+      <div class="produto-card-info">
+        <h3>Mask Jeans Preta</h3>
+        <p class="desc">Calça jeans preta com corte slim, lavagem exclusiva e patch Mask.</p>
+        <div class="produto-card-bottom">
+          <span class="produto-preco">R$ 259,90</span>
+          <div class="tamanhos-mini">
+            <span class="tamanho-tag">P</span>
+            <span class="tamanho-tag">M</span>
+            <span class="tamanho-tag">G</span>
+            <span class="tamanho-tag">GG</span>
+          </div>
+        </div>
+        <button class="btn-add-card" onclick="event.stopPropagation(); addToCart('Mask Jeans Preta', 259.90, 'Pack de Roupas Mask/Calça jens preta.jpg', this.closest('.produto-card').querySelector('.tamanho-tag.selected')?.textContent || '', 'Preto')">
+          Adicionar ao Carrinho
+        </button>
+      </div>
+    </article>
+
+    <!-- P3 -->
+    <article class="produto-card" onclick="openModal(produtos[2])">
+      <div class="produto-card-img">
+        <img class="img-front" src="Pack de Roupas Mask/Calça moletom preta.jpg" alt="Calça Moletom Preta">
+      </div>
+      <div class="produto-card-info">
+        <h3>Mask Sweatpants Preta</h3>
+        <p class="desc">Calça moletom premium com punhos, cordão duplo e logo estampado na lateral.</p>
+        <div class="produto-card-bottom">
+          <span class="produto-preco">R$ 219,90</span>
+          <div class="tamanhos-mini">
+            <span class="tamanho-tag">P</span>
+            <span class="tamanho-tag">M</span>
+            <span class="tamanho-tag">G</span>
+            <span class="tamanho-tag">GG</span>
+          </div>
+        </div>
+        <button class="btn-add-card" onclick="event.stopPropagation(); addToCart('Mask Sweatpants Preta', 219.90, 'Pack de Roupas Mask/Calça moletom preta.jpg', this.closest('.produto-card').querySelector('.tamanho-tag.selected')?.textContent || '', 'Preto')">
+          Adicionar ao Carrinho
+        </button>
+      </div>
+    </article>
+
+    <!-- P4 -->
+    <article class="produto-card" onclick="openModal(produtos[3])">
+      <div class="produto-card-img">
+        <img class="img-front" src="Pack de Roupas Mask/Calça moletom cinza.jpg" alt="Calça Moletom Cinza">
+      </div>
+      <div class="produto-card-info">
+        <h3>Mask Sweatpants Cinza</h3>
+        <p class="desc">A versão cinza mescla da nossa sweatpants favorita — conforto de sempre.</p>
+        <div class="produto-card-bottom">
+          <span class="produto-preco">R$ 219,90</span>
+          <div class="tamanhos-mini">
+            <span class="tamanho-tag">P</span>
+            <span class="tamanho-tag">M</span>
+            <span class="tamanho-tag">G</span>
+            <span class="tamanho-tag">GG</span>
+          </div>
+        </div>
+        <button class="btn-add-card" onclick="event.stopPropagation(); addToCart('Mask Sweatpants Cinza', 219.90, 'Pack de Roupas Mask/Calça moletom cinza.jpg', this.closest('.produto-card').querySelector('.tamanho-tag.selected')?.textContent || '', 'Cinza')">
+          Adicionar ao Carrinho
+        </button>
+      </div>
+    </article>
+
+    
+
+</section>
+</main>
+
+<footer>
+  <div class="footer-brand">
+    <img src="Pack de Roupas Mask/masklogo-removebg-preview.png" alt="Mask Logo">
+    <p>Streetwear com atitude e identidade.</p>
+  </div>
+  <div>
+    <h4>Navegação</h4>
+    <a href="home.html">Home</a>
+    <a href="camisetas.html">Camisetas</a>
+    <a href="shorts.html">Shorts</a>
+    <a href="calcas.html">Calças</a>
+    <a href="moletons.html">Moletons</a>
+  </div>
+  <div>
+    <h4>Contato</h4>
+    <p>(11) 99999-9999</p>
+    <p>maskcompany@email.com</p>
+    <p>São Paulo — SP</p>
+    <p>Seg–Sex / 9h às 18h</p>
+  </div>
+</footer>
+<div class="footer-bottom">© 2026 Mask®. Todos os direitos reservados.</div>
+
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-body">
+      <div class="modal-gallery">
+        <img class="modal-main-img" src="" alt="Produto">
+        <div class="modal-thumbs"></div>
+      </div>
+      <div class="modal-info">
+        <span class="modal-cat"></span>
+        <h2 class="modal-nome"></h2>
+        <div class="modal-preco"></div>
+        <p class="modal-desc"></p>
+        <div>
+          <p class="modal-section-label">Tamanhos</p>
+          <div class="modal-tamanhos"></div>
+        </div>
+        <div>
+          <p class="modal-section-label">Cores disponíveis</p>
+          <div class="modal-cores"></div>
+        </div>
+        <div class="modal-material"></div>
+        <button class="btn-add-modal">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cart-overlay" id="cart-bg"></div>
+<aside class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <h3>Meu Carrinho</h3>
+    <button class="cart-close" id="cart-close">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total</span>
+      <strong id="cart-total-value">R$ 0,00</strong>
+    </div>
+    <button class="btn-checkout" onclick="showToast('Em breve: checkout online!')">Finalizar Compra</button>
+  </div>
+</aside>
+
+<script>
+const produtos = [
+  {
+    nome: 'Cloud Calça Mask',
+    categoria: 'Calças',
+    preco: 229.90,
+    imgs: ['Pack de roupas MASK pt2/CLOUD CALCA MASK.png'],
+    descFull: 'A Cloud Calça é a peça mais leve da coleção Mask. Tecido ultra-macio com leveza surpreendente, corte wide leg moderno e estampa cloud exclusiva. Elástico confortável na cintura com cordão regulável.',
+    material: '100% Viscose Premium — 180g/m² — Corte Wide Leg',
+    tamanhos: ['P', 'M', 'G', 'GG'],
+    cores: [{ nome: 'Preto', hex: '#1a1a1a' }, { nome: 'Branco Nuvem', hex: '#f0f0f0' }]
+  },
+  {
+    nome: 'Mask Jeans Preta',
+    categoria: 'Calças',
+    preco: 259.90,
+    imgs: ['Pack de Roupas Mask/Calça jens preta.jpg'],
+    descFull: 'A calça jeans preta mais estilosa do streetwear nacional. Lavagem especial que dá textura única, corte slim moderno e patch Mask em couro vegano bordado na parte traseira. Detalhe em linha contrastante.',
+    material: '98% Algodão / 2% Elastano — Denim 11oz — Lavagem Especial',
+    tamanhos: ['P', 'M', 'G', 'GG'],
+    cores: [{ nome: 'Preto', hex: '#1a1a1a' }, { nome: 'Cinza Estonado', hex: '#666' }]
+  },
+  {
+    nome: 'Mask Sweatpants Preta',
+    categoria: 'Calças',
+    preco: 219.90,
+    imgs: ['Pack de Roupas Mask/Calça moletom preta.jpg', 'Pack de Roupas Mask/Calça moletom cinza.jpg'],
+    descFull: 'A sweatpants preta da Mask — o clássico que nunca sai de moda. Punhos duplos, cordão ajustável, bolsos laterais profundos e logo estampado na lateral da perna. Conforto máximo sem abrir mão do estilo.',
+    material: '80% Algodão / 20% Poliéster — Fleece 320g/m² — Interno Felpado',
+    tamanhos: ['P', 'M', 'G', 'GG'],
+    cores: [{ nome: 'Preto', hex: '#1a1a1a' }, { nome: 'Grafite', hex: '#444' }]
+  },
+  {
+    nome: 'Mask Sweatpants Cinza',
+    categoria: 'Calças',
+    preco: 219.90,
+    imgs: ['Pack de Roupas Mask/Calça moletom cinza.jpg', 'Pack de Roupas Mask/Calça moletom preta.jpg'],
+    descFull: 'Versão cinza mescla da nossa sweatpants mais amada. Mesma qualidade, mesmo conforto — agora na cor que combina com absolutamente tudo. Um básico essencial do guarda-roupa Mask.',
+    material: '80% Algodão / 20% Poliéster — Fleece 320g/m² — Mescla Premium',
+    tamanhos: ['P', 'M', 'G', 'GG'],
+    cores: [{ nome: 'Cinza Mescla', hex: '#888' }, { nome: 'Cinza Claro', hex: '#bbb' }]
+  },
+  {
+    nome: 'Terrada Garoa',
+    categoria: 'Calças',
+    preco: 279.90,
+    imgs: ['Pack de roupas MASK pt2/terrada garoa.png'],
+    descFull: 'A Terrada Garoa é a cargo mais aguardada da coleção. Seis bolsos funcionais, tela resistente ao vento e chuva leve, ajuste nos tornozelos com velcro. Detalhe grafite exclusivo impresso em silk-screen.',
+    material: '65% Nylon / 35% Poliéster — 280g/m² — Tratamento DWR — Resistente à Água',
+    tamanhos: ['P', 'M', 'G', 'GG'],
+    cores: [{ nome: 'Grafite', hex: '#555' }, { nome: 'Preto', hex: '#1a1a1a' }, { nome: 'Verde Musgo', hex: '#5a6a3a' }]
+  }
+];
+</script>
+
+<script src="catalogo.js"></script>
+</body>
+</html>
